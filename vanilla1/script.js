@@ -8,41 +8,41 @@ let score = 0;
 
 const brickRowCount = 9;
 const brickColumnCount = 5;
-const delay = 500; //delay to reset the game
+const delay = 500; //aizture speles restartesanai
 
-// Create ball props
+// bumbas ipasibas,sakuma punkts
 const ball = {
   x: canvas.width / 2,
   y: canvas.height / 2,
-  size: 10,
-  speed: 8,
-  dx: 4,
+  size: 10, //atrasanas vieta
+  speed: 3,
+  dx: 4, //kustiba 
   dy: -4,
   visible: true
 };
 
-// Create paddle props
+// atsiteja ipasibas
 const paddle = {
-  x: canvas.width / 2 - 40,
-  y: canvas.height - 20,
-  w: 80,
-  h: 10,
+  x: canvas.width / 2 - 80,
+  y: canvas.height - 40,
+  w: 160,  //izmeri
+  h: 20,
   speed: 8,
   dx: 0,
   visible: true
 };
 
-// Create brick props
+// kubiku ipasibas
 const brickInfo = {
-  w: 70,
+  w: 70, //izmeri
   h: 20,
   padding: 10,
-  offsetX: 45,
+  offsetX: 45, //x,y asis,izvietojums
   offsetY: 60,
   visible: true
 };
 
-// Create bricks
+// kubiku iZveide
 const bricks = [];
 for (let i = 0; i < brickRowCount; i++) {
   bricks[i] = [];
@@ -53,7 +53,7 @@ for (let i = 0; i < brickRowCount; i++) {
   }
 }
 
-// Draw ball on canvas
+// bumbas izveide ieks canvas
 function drawBall() {
   ctx.beginPath();
   ctx.arc(ball.x, ball.y, ball.size, 0, Math.PI * 2);
@@ -62,7 +62,7 @@ function drawBall() {
   ctx.closePath();
 }
 
-// Draw paddle on canvas
+// atsiteja izveide ieks canvas
 function drawPaddle() {
   ctx.beginPath();
   ctx.rect(paddle.x, paddle.y, paddle.w, paddle.h);
